@@ -47,7 +47,7 @@ public class FoodSpawner : MonoBehaviour
 
                 spawnedFood.TakeSpawnPointPlace(_movementToPointSpeed);
 
-                _spawnPoints[i].IsEmpty = false;
+                _spawnPoints[i].Take();
             }
         }
     }

@@ -35,7 +35,7 @@ public class Soup : Nutrients
         Fats += _foodCatcher.Caught.FatsValue;
         Carbohydrates += _foodCatcher.Caught.CarbohydratesValue;
         Proteins += _foodCatcher.Caught.ProteinsValue;
-        _foodCatcher.Choosen.IsEmpty = true;
+        _foodCatcher.Choosen.Free();
         _foodCatcher.Caught.BeAbsorbed();
 
         FoodEaten?.Invoke();
