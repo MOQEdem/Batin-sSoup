@@ -46,21 +46,25 @@ public class ThreatLevel : MonoBehaviour
     {
         _slider.value = Mathf.Clamp(_slider.value + _valueIncreaseRate, _minValue, _maxValue);
         SetColor();
-
-        if (_slider.value == _maxValue)
-        {
-            _gameLost.RegretLoser();
-        }
+        CheckForEndGame();
     }
 
     private void SetColor()
     {
-        if (_slider.value <= 3)
+        if (_slider.value <= (_maxValue / 3))
             _image.color = new Color(1f, 1f, 1f);
-        else if (_slider.value <= 6)
+        else if (_slider.value <= (_maxValue / 3 * 2))
             _image.color = new Color(1f, 0.65f, 1f);
         else
             _image.color = new Color(1f, 0.3f, 1f);
+    }
+
+    private void CheckForEndGame()
+    {
+        if (_slider.value == _maxValue)
+        {
+            _gameLost.RegretLoser();
+        }
     }
 
     private void SetChangeRateLevelOne()

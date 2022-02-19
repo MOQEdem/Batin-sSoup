@@ -7,6 +7,7 @@ public class MouseFollower : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _distanceFromCamera;
     [SerializeField] private FoodCatcher _foodCatcher;
+    [SerializeField] private Soup _soup;
     private Vector3 _mousePosition;
     private bool _isFoodCaght;
 
@@ -14,12 +15,14 @@ public class MouseFollower : MonoBehaviour
     {
         _foodCatcher.FoodCaught += OnFoodCaught;
         _foodCatcher.FoodReleased += OnFoodReleased;
+        _soup.FoodEaten += OnFoodReleased;
     }
 
     private void OnDisable()
     {
         _foodCatcher.FoodCaught -= OnFoodCaught;
         _foodCatcher.FoodReleased -= OnFoodReleased;
+        _soup.FoodEaten -= OnFoodReleased;
     }
 
     private void Start()
@@ -38,12 +41,7 @@ public class MouseFollower : MonoBehaviour
 
             transform.position = Vector3.MoveTowards(transform.position, MouseScreenToWorld, _speed * Time.deltaTime);
         }
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            _isFoodCaght = false;
-        }
-    }    
+    }
 
     private void OnFoodCaught()
     {

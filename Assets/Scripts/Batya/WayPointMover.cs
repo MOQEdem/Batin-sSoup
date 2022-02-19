@@ -20,13 +20,14 @@ public class WayPointMover : MonoBehaviour
     }
     public void RunMovement()
     {
-        transform.position = _start.position;
         StartCoroutine(Move());
     }
 
     private IEnumerator Move()
     {
         _animator.SetBool(AnimatorBatya.Params.IsRunning, true);
+
+        transform.position = _start.position;
 
         while (transform.position != _finish.position)
         {

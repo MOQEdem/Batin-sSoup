@@ -4061,6 +4061,7 @@ MonoBehaviour:
   _speed: 10
   _distanceFromCamera: 14
   _foodCatcher: {fileID: 222521875}
+  _soup: {fileID: 501237561784039792}
 --- !u!1 &901615024
 GameObject:
   m_ObjectHideFlags: 0
@@ -10631,6 +10632,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2114926599086665097, guid: e4744e25f0dcc76409aa44d6ebcb8c90, type: 3}
+      propertyPath: _soup
+      value: 
+      objectReference: {fileID: 501237561784039792}
     - target: {fileID: 4404891414248090518, guid: e4744e25f0dcc76409aa44d6ebcb8c90, type: 3}
       propertyPath: m_SortingOrder
       value: 3

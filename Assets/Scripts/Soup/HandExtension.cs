@@ -8,6 +8,7 @@ public class HandExtension : MonoBehaviour
     [SerializeField] private float _increaseRateOY;
     [SerializeField] private float _returnSpeed;
     [SerializeField] private FoodCatcher _foodCatcher;
+    [SerializeField] private Soup _soup;
 
     private Vector3 _normalScale;
     private float _maxIncreaseOX;
@@ -17,12 +18,14 @@ public class HandExtension : MonoBehaviour
     {
         _foodCatcher.FoodCaught += OnFoodCaught;
         _foodCatcher.FoodReleased += OnFoodReleased;
+        _soup.FoodEaten += OnFoodReleased;
     }
 
     private void OnDisable()
     {
         _foodCatcher.FoodCaught -= OnFoodCaught;
         _foodCatcher.FoodReleased -= OnFoodReleased;
+        _soup.FoodEaten -= OnFoodReleased;
     }
 
 

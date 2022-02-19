@@ -21,19 +21,7 @@ public class SkillBuyButton : MonoBehaviour
 
     private void OnEnable()
     {
-        if (_isBought)
-        {
-            _button.interactable = false;
-        }
-        else if (_soup.IsAbleToBuy(_skillCost))
-        {
-            _button.interactable = true;
-        }
-        else
-        {
-            _button.interactable = false;
-        }
-
+        SetInteractable();
     }
 
     public void SetBoughtStatus()
@@ -45,5 +33,15 @@ public class SkillBuyButton : MonoBehaviour
     {
         _soup.BuyAbility(_skillCost);
         _skillShop.Refresh();
+    }
+
+    private void SetInteractable()
+    {
+        if (_isBought)
+            _button.interactable = false;
+        else if (_soup.IsAbleToBuy(_skillCost))
+            _button.interactable = true;
+        else
+            _button.interactable = false;
     }
 }

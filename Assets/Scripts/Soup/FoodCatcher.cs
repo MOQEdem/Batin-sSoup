@@ -12,21 +12,22 @@ public class FoodCatcher : MonoBehaviour
     public event UnityAction FoodCaught;
     public event UnityAction FoodReleased;
 
+    private void Update()
+    {
+        if (_caughtFood != null)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                ReleaseFood();
+            }
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent<Food>(out Food food))
         {
-            _caughtFood = food;
-            FoodCaught?.Invoke();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.TryGetComponent<Food>(out Food food))
-        {
-            _caughtFood = null;
-            FoodReleased?.Invoke();
+            CatchFood(food);
         }
     }
 
@@ -36,5 +37,17 @@ public class FoodCatcher : MonoBehaviour
             return false;
         else
             return true;
+    }
+
+    private void CatchFood(Food food)
+    {
+        _caughtFood = food;
+        FoodCaught?.Invoke();
+    }
+
+    private void ReleaseFood()
+    {
+        _caughtFood = null;
+        FoodReleased?.Invoke();
     }
 }
