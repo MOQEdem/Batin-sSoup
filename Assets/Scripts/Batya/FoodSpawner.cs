@@ -21,7 +21,7 @@ public class FoodSpawner : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
     }
 
-    public void RunSpawn()
+    public void StartSpawn()
     {
         StartCoroutine(Spawn());
         FoodSpawned?.Invoke();
@@ -45,9 +45,9 @@ public class FoodSpawner : MonoBehaviour
 
                 var spawnedFood = Instantiate(food, transform.position, food.transform.rotation);
 
-                spawnedFood.RunMoveToPoint(_movementToPointSpeed);
+                spawnedFood.TakeSpawnPointPlace(_movementToPointSpeed);
 
-                _spawnPoints[i].AcceptFood();
+                _spawnPoints[i].IsEmpty = false;
             }
         }
     }

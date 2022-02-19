@@ -6,13 +6,14 @@ public class Food : Nutrients
 {
     [SerializeField] private SpawnPoint _spawnPoint;
 
+    public SpawnPoint SpawnPoint => _spawnPoint;
+
     public void BeAbsorbed()
     {
-        FreeSpawnPoint();
         Destroy(gameObject);
     }
 
-    public void RunMoveToPoint(float speed)
+    public void TakeSpawnPointPlace(float speed)
     {
         StartCoroutine(MoveToPoint(speed));
     }
@@ -29,10 +30,5 @@ public class Food : Nutrients
     public void SetSpawnPoint(SpawnPoint spawnPoint)
     {
         _spawnPoint = spawnPoint;
-    }
-
-    private void FreeSpawnPoint()
-    {
-        _spawnPoint.RejectFood();
     }
 }

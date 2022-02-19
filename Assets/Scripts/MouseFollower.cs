@@ -8,6 +8,7 @@ public class MouseFollower : MonoBehaviour
     [SerializeField] private float _distanceFromCamera;
     [SerializeField] private FoodCatcher _foodCatcher;
     [SerializeField] private Soup _soup;
+
     private Vector3 _mousePosition;
     private bool _isFoodCaght;
 

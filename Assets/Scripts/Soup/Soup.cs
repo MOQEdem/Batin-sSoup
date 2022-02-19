@@ -32,10 +32,12 @@ public class Soup : Nutrients
     private void AbsorbFood()
     {
         _audioSource.Play();
-        Fats += _foodCatcher.CaughtFood.FatsValue;
-        Carbohydrates += _foodCatcher.CaughtFood.CarbohydratesValue;
-        Proteins += _foodCatcher.CaughtFood.ProteinsValue;
-        _foodCatcher.CaughtFood.BeAbsorbed();
+        Fats += _foodCatcher.Caught.FatsValue;
+        Carbohydrates += _foodCatcher.Caught.CarbohydratesValue;
+        Proteins += _foodCatcher.Caught.ProteinsValue;
+        _foodCatcher.Choosen.IsEmpty = true;
+        _foodCatcher.Caught.BeAbsorbed();
+
         FoodEaten?.Invoke();
     }
 

@@ -610,7 +610,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1877572351}
         m_TargetAssemblyTypeName: WayPointMover, Assembly-CSharp
-        m_MethodName: RunMovement
+        m_MethodName: MoveFromStartToFinish
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -622,7 +622,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1877572352}
         m_TargetAssemblyTypeName: FoodSpawner, Assembly-CSharp
-        m_MethodName: RunSpawn
+        m_MethodName: StartSpawn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -898,6 +898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &158163500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1437,6 +1438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &270051132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2638,6 +2640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &533128612
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,6 +3440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &719913036
 GameObject:
   m_ObjectHideFlags: 0
@@ -3860,6 +3864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &838570372
 GameObject:
   m_ObjectHideFlags: 0
@@ -9430,6 +9435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &952812993
 GameObject:
   m_ObjectHideFlags: 0
@@ -10163,6 +10169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1044886138
 GameObject:
   m_ObjectHideFlags: 0
@@ -10206,6 +10213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1046809465
 GameObject:
   m_ObjectHideFlags: 0
@@ -10528,6 +10536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1086064994
 GameObject:
   m_ObjectHideFlags: 0
@@ -11245,6 +11254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1295659450
 GameObject:
   m_ObjectHideFlags: 0
@@ -12605,6 +12615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1567519792
 GameObject:
   m_ObjectHideFlags: 0
@@ -14782,6 +14793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1942405977
 GameObject:
   m_ObjectHideFlags: 0
@@ -15016,6 +15028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &1977726864
 GameObject:
   m_ObjectHideFlags: 0
@@ -15094,6 +15107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!1 &2081943696
 GameObject:
   m_ObjectHideFlags: 0
@@ -15549,6 +15563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58d5e69b1c8c7d46a216cc86a17d020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsEmpty: 0
 --- !u!114 &501237561784039792 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8257755327315770308, guid: e4744e25f0dcc76409aa44d6ebcb8c90, type: 3}

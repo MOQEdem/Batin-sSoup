@@ -4,22 +4,10 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    private bool _isEmpty;
-
-    public bool IsEmpty => _isEmpty;
+    public bool IsEmpty;
 
     private void Start()
     {
-        _isEmpty = true;
-    }
-
-    public void AcceptFood()
-    {
-        _isEmpty = false;
-    }
-
-    public void RejectFood()
-    {
-        _isEmpty = true;
+        IsEmpty = true;
     }
 }

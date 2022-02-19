@@ -7,9 +7,11 @@ using UnityEngine.Events;
 public class FoodCatcher : MonoBehaviour
 {
     private Food _caughtFood;
+    private SpawnPoint _choosenSpawnPoint;
     private AudioSource _audioSource;
 
-    public Food CaughtFood => _caughtFood;
+    public Food Caught => _caughtFood;
+    public SpawnPoint Choosen => _choosenSpawnPoint;
 
     public event UnityAction FoodCaught;
     public event UnityAction FoodReleased;
@@ -40,15 +42,13 @@ public class FoodCatcher : MonoBehaviour
 
     public bool IsFoodCaught()
     {
-        if (_caughtFood == null)
-            return false;
-        else
-            return true;
+        return _caughtFood != null;
     }
 
     private void CatchFood(Food food)
     {
         _caughtFood = food;
+        _choosenSpawnPoint = food.SpawnPoint;
         _audioSource.Play();
         FoodCaught?.Invoke();
     }
@@ -56,6 +56,7 @@ public class FoodCatcher : MonoBehaviour
     private void ReleaseFood()
     {
         _caughtFood = null;
+        _choosenSpawnPoint = null;
         FoodReleased?.Invoke();
     }
 }

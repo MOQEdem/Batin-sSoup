@@ -18,7 +18,7 @@ public class WayPointMover : MonoBehaviour
         _finish = _wayPoints.Finish;
         _animator = GetComponent<Animator>();
     }
-    public void RunMovement()
+    public void MoveFromStartToFinish()
     {
         StartCoroutine(Move());
     }
