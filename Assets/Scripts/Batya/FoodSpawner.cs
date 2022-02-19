@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class FoodSpawner : MonoBehaviour
 {
     [SerializeField] private List<Food> _food;
@@ -10,12 +11,14 @@ public class FoodSpawner : MonoBehaviour
     [SerializeField] private float _movementToPointSpeed;
 
     private SpawnPoint[] _spawnPoints;
+    private AudioSource _audioSource;
 
     public event UnityAction FoodSpawned;
 
     private void Start()
     {
         _spawnPoints = _spawnSystem.GetComponentsInChildren<SpawnPoint>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     public void RunSpawn()
@@ -31,6 +34,8 @@ public class FoodSpawner : MonoBehaviour
         for (int i = 0; i < _spawnPoints.Length; i++)
         {
             yield return spawnDelay;
+
+            _audioSource.Play();
 
             if (_spawnPoints[i].IsEmpty)
             {

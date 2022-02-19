@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class FoodCatcher : MonoBehaviour
 {
     private Food _caughtFood;
+    private AudioSource _audioSource;
 
     public Food CaughtFood => _caughtFood;
 
     public event UnityAction FoodCaught;
     public event UnityAction FoodReleased;
+
+    private void Start()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -42,6 +49,7 @@ public class FoodCatcher : MonoBehaviour
     private void CatchFood(Food food)
     {
         _caughtFood = food;
+        _audioSource.Play();
         FoodCaught?.Invoke();
     }
 

@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(AudioSource))]
 public class Soup : Nutrients
 {
     private FoodCatcher _foodCatcher;
+    private AudioSource _audioSource;
 
     public event UnityAction FoodEaten;
     public event UnityAction SkillBought;
@@ -13,6 +15,7 @@ public class Soup : Nutrients
     private void Start()
     {
         _foodCatcher = GetComponentInChildren<FoodCatcher>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,6 +31,7 @@ public class Soup : Nutrients
 
     private void AbsorbFood()
     {
+        _audioSource.Play();
         Fats += _foodCatcher.CaughtFood.FatsValue;
         Carbohydrates += _foodCatcher.CaughtFood.CarbohydratesValue;
         Proteins += _foodCatcher.CaughtFood.ProteinsValue;
